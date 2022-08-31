@@ -1,0 +1,121 @@
+/* Hyperlinks
+/*----------------------------------------------*/
+
+:root {
+  --link-background-color: white;
+  --link-color: hsl(222, 100%, 50%);
+  --link-color-hover-active: hsl(0, 82%, 44%);
+  --link-color-focus: hsl(0, 0%, 100%);
+  --link-background-color-focus: hsl(0, 0%, 0%);
+  --link-underline-position : 0 1.2em;
+}
+
+@supports selector(a:not(nav a, header a, footer a)) {
+
+  a:not(nav a, header a, footer a) {
+    text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-size: 100% 0.05em;
+    background-position: var(--link-underline-position, 0 1.2em);
+    text-decoration: none;
+  }
+  
+  a:not(nav a, header a, footer a) {
+    color: var(--link-color);
+  }
+  a:not(nav a, header a, footer a):hover,
+  a:not(nav a, header a, footer a):active {
+    color: var(--link-color-hover-active);
+  }
+  a:not(nav a, header a, footer a):focus-visible {
+    color: var(--link-color-focus);
+    text-shadow: 0.03em 0 var(--link-background-color-focus), -0.03em 0 var(--link-background-color-focus), 0 0.03em var(--link-background-color-focus), 0 -0.03em var(--link-background-color-focus), 0.06em 0 var(--link-background-color-focus), -0.06em 0 var(--link-background-color-focus), 0.09em 0 var(--link-background-color-focus), -0.09em 0 var(--link-background-color-focus), 0.12em 0 var(--link-background-color-focus), -0.12em 0 var(--link-background-color-focus), 0.15em 0 var(--link-background-color-focus), -0.15em 0 var(--link-background-color-focus);
+    background-image: linear-gradient(var(--link-color-focus), var(--link-color-focus));
+    background-color: var(--link-background-color-focus);
+    outline: 4px solid black;
+  }
+  
+  a:not(nav a, header a, footer a)::selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+  a:not(nav a, header a, footer a)::-moz-selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+}
+
+@supports not (selector(a:not(nav a, header a, footer a))) {
+
+  main a {
+    text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-size: 100% 0.05em;
+    background-position: var(--link-underline-position, 0 1.2em);
+    text-decoration: none;
+    border: 3px solid red;
+  }
+  
+  main a {
+    color: var(--link-color);
+  }
+  main a:hover,
+  main a:active {
+    color: var(--link-color-hover-active);
+  }
+  main a:focus-visible {
+    color: var(--link-color-focus);
+    text-shadow: 0.03em 0 var(--link-background-color-focus), -0.03em 0 var(--link-background-color-focus), 0 0.03em var(--link-background-color-focus), 0 -0.03em var(--link-background-color-focus), 0.06em 0 var(--link-background-color-focus), -0.06em 0 var(--link-background-color-focus), 0.09em 0 var(--link-background-color-focus), -0.09em 0 var(--link-background-color-focus), 0.12em 0 var(--link-background-color-focus), -0.12em 0 var(--link-background-color-focus), 0.15em 0 var(--link-background-color-focus), -0.15em 0 var(--link-background-color-focus);
+    background-image: linear-gradient(var(--link-color-focus), var(--link-color-focus));
+    background-color: var(--link-background-color-focus);
+    outline: 4px solid black;
+  }
+  
+  main a::selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+  main a::-moz-selection {
+    color: var(--page-selection-color);
+    text-shadow: 0.03em 0 var(--page-selection-background-color), -0.03em 0 var(--page-selection-background-color), 0 0.03em var(--page-selection-background-color), 0 -0.03em var(--page-selection-background-color), 0.06em 0 var(--page-selection-background-color), -0.06em 0 var(--page-selection-background-color), 0.09em 0 var(--page-selection-background-color), -0.09em 0 var(--page-selection-background-color), 0.12em 0 var(--page-selection-background-color), -0.12em 0 var(--page-selection-background-color), 0.15em 0 var(--page-selection-background-color), -0.15em 0 var(--page-selection-background-color);
+    background: var(--page-selection-background-color);
+  }
+
+}
+
+
+
+@media (-ms-high-contrast: none) {
+
+  main a {
+    color: var(--link-color);
+    text-shadow: 0.03em 0 var(--link-background-color), -0.03em 0 var(--link-background-color), 0 0.03em var(--link-background-color), 0 -0.03em var(--link-background-color), 0.06em 0 var(--link-background-color), -0.06em 0 var(--link-background-color), 0.09em 0 var(--link-background-color), -0.09em 0 var(--link-background-color), 0.12em 0 var(--link-background-color), -0.12em 0 var(--link-background-color), 0.15em 0 var(--link-background-color), -0.15em 0 var(--link-background-color);
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-size: 100% 0.05em;
+    background-position: var(--link-underline-position, 0 1.2em);
+    text-decoration: none;
+    border: 3px solid blue;
+  }
+
+  main a:hover {
+    color: var(--link-color-hover-active);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+  main a:focus {
+    color: var(--link-color-focus);
+    background-color: var(--link-background-color-focus);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+  main a:active {
+    color: var(--link-color-hover-active);
+    background-image: linear-gradient(currentColor, currentColor);
+  }
+
+}

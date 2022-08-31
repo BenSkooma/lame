@@ -1,0 +1,555 @@
+/* Reset & Base Setup
+* ========================================================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -ms-box-sizing: inherit;
+  box-sizing: inherit;
+  background-repeat: no-repeat;
+}
+html {
+  line-height: 1;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+html, body {
+  height: 100%;
+}
+img, picture, video, canvas, svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:is(:not(img, track, br, input, hr, col, source, base, area, param, wbr)):empty {
+  display: none;
+}
+
+/* Sanitize
+* ========================================================================== */
+
+/* Grouping content
+* ========================================================================== */
+
+/**
+* 1. Correct the inheritance of border color in Firefox.
+* 2. Add the correct box sizing in Firefox.
+*/
+
+hr {
+  color: inherit; /* 1 */
+  height: 0; /* 2 */
+}
+
+/**
+* Remove the list style on navigation lists in all browsers (opinionated).
+*/
+
+nav ol, ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**
+* Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+*/
+
+nav li::before {
+  content: "\200B";
+  float: left;
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+* 3. Prevent overflow of the container in all browsers (opinionated).
+*/
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+  overflow: auto; /* 3 */
+}
+
+/* Text-level semantics
+* ========================================================================== */
+
+/**
+* Add the correct text decoration in Safari.
+*/
+
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+* Add the correct font weight in Chrome, Edge, and Safari.
+*/
+
+b, strong {
+  font-weight: bolder;
+}
+
+/**
+* 1. Correct the inheritance and scaling of font size in all browsers.
+* 2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code, kbd, samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+* Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+* ========================================================================== */
+
+/**
+* Remove the border on iframes in all browsers (opinionated).
+*/
+
+iframe {
+  border-style: none;
+}
+
+/**
+* Change the fill color to match the text color in all browsers (opinionated).
+*/
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/* Tabular data
+* ========================================================================== */
+
+/**
+* 1. Collapse border spacing in all browsers (opinionated).
+* 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
+* 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+*/
+
+table {
+  border-collapse: collapse; /* 1 */
+  border-color: inherit; /* 2 */
+  text-indent: 0; /* 3 */
+}
+
+/* Forms
+* ========================================================================== */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: inherit;
+  border: 1px solid currentColor;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+/**
+* Correct the inability to style buttons in iOS and Safari.
+*/
+
+button, [type="button" i], [type="reset" i], [type="submit" i] {
+  -webkit-appearance: button;
+}
+
+input {
+  overflow: visible;
+}
+
+input,
+textarea {
+  padding: 1px;
+}
+
+/**
+* Change the inconsistent appearance in all browsers (opinionated).
+*/
+
+fieldset {
+  border: 1px solid currentColor;
+}
+
+/**
+* Add the correct vertical alignment in Chrome, Edge, and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+* 1. Remove the margin in Firefox and Safari.
+* 3. Change the resize direction in all browsers (opinionated).
+*/
+
+textarea {
+  margin: 0; /* 1 */
+  resize: vertical; /* 3 */
+  overflow: auto;
+  vertical-align: top;
+}
+
+select {
+  text-transform: none;
+}
+
+legend {
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/**
+* 1. Correct the odd appearance in Chrome, Edge, and Safari.
+* 2. Correct the outline style in Safari.
+*/
+
+[type="search" i] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+[type=color] {
+  background: inherit;
+}
+
+/**
+* Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+* Correct the text style of placeholders in Chrome, Edge, and Safari.
+*/
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+* Remove the inner padding in Chrome, Edge, and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+* 1. Correct the inability to style upload buttons in iOS and Safari.
+* 2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+* ========================================================================== */
+
+/*
+* Add the correct styles in Safari.
+*/
+
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+* Add the correct display in Safari.
+*/
+
+details > summary:first-of-type {
+  display: list-item;
+}
+
+/* Accessibility
+* ========================================================================== */
+
+/**
+* Change the cursor on busy elements in all browsers (opinionated).
+*/
+
+[aria-busy="true" i] {
+  cursor: progress;
+}
+
+/*
+* Change the cursor on control elements in all browsers (opinionated).
+*/
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+* Change the cursor on disabled, not-editable, or otherwise
+* inoperable elements in all browsers (opinionated).
+*/
+
+[aria-disabled="true" i], [disabled] {
+  cursor: not-allowed;
+}
+
+/*
+* Change the display on visually hidden accessible elements
+* in all browsers (opinionated).
+*/
+
+[aria-hidden="false" i][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false" i][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/* Forms
+* ========================================================================== */
+
+/**
+* 1. Change the inconsistent appearance in all browsers (opinionated).
+* 2. Add typography inheritance in all browsers (opinionated).
+*/
+
+button, input, select, textarea {
+  background-color: transparent; /* 1 */
+  border: 1px solid WindowFrame; /* 1 */
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+  padding: 0.25em 0.375em; /* 1 */
+}
+
+/**
+* Change the inconsistent appearance in all browsers (opinionated).
+*/
+
+select {
+  appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E") no-repeat right center / 1em;
+  border-radius: 0;
+  padding-right: 1em;
+}
+
+/**
+* Don't show the arrow for multiple choice selects
+*/
+
+select[multiple] {
+  background-image: none;
+}
+
+/**
+* Remove the border and padding in all browsers (opinionated).
+*/
+
+[type="color" i], [type="range" i] {
+  border-width: 0;
+  padding: 0;
+}
+
+/* Typograpy
+* ========================================================================== */
+
+/**
+* Add the correct system-ui font-family in Firefox.
+*/
+
+@font-face {
+  font-family: system-ui;
+  src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("HelveticaNeue");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"), local("Roboto-Italic"), local("HelveticaNeue-Italic");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-weight: bold;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"), local("Roboto-Bold"), local("HelveticaNeue-Bold");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: bold;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Bold Italic"), local("Ubuntu-BoldItalic"), local("Roboto-BoldItalic"), local("HelveticaNeue-BoldItalic");
+}
+
+/**
+* Add the correct system-ui font-family in Chrome, Edge, and Firefox.
+*/
+
+@font-face {
+  font-family: ui-monospace;
+  src: local(".AppleSystemUIFontMonospaced-Regular"), local("Segoe UI Mono"), local("UbuntuMono"), local("Roboto-Mono"), local("Menlo");
+}
+
+@font-face {
+  font-family: ui-monospace;
+  font-style: italic;
+  src: local(".AppleSystemUIFontMonospaced-RegularItalic"), local("Segoe UI Mono Italic"), local("UbuntuMono-Italic"), local("Roboto-Mono-Italic"), local("Menlo-Italic");
+}
+
+@font-face {
+  font-family: ui-monospace;
+  font-weight: bold;
+  src: local(".AppleSystemUIFontMonospaced-Bold"), local("Segoe UI Mono Bold"), local("UbuntuMono-Bold"), local("Roboto-Mono-Bold"), local("Menlo-Bold");
+}
+
+@font-face {
+  font-family: ui-monospace;
+  font-style: italic;
+  font-weight: bold;
+  src: local(".AppleSystemUIFontMonospaced-BoldItalic"), local("Segoe UI Mono Bold Italic"), local("UbuntuMono-BoldItalic"), local("Roboto-Mono-BoldItalic"), local("Menlo-BoldItalic");
+}
+
+/**
+* Use the default user interface font in all browsers (opinionated).
+*/
+
+html {
+  font-family:
+    system-ui,
+    /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI",
+    /* Android 4+ */ "Roboto",
+    /* Ubuntu 10.10+ */ "Ubuntu",
+    /* Gnome 3+ */ "Cantarell",
+    /* KDE Plasma 5+ */ "Noto Sans",
+    /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+/**
+* Use the default monospace user interface font in all browsers (opinionated).
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace,
+    /* macOS 10.10+ */ "Menlo",
+    /* Windows 6+ */ "Consolas",
+    /* Android 4+ */ "Roboto Mono",
+    /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+    /* KDE Plasma 5+ */ "Noto Mono",
+    /* KDE Plasma 4+ */ "Oxygen Mono",
+    /* Linux/OpenOffice fallback */ "Liberation Mono",
+    /* fallback */ monospace,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+/* Misc
+* ========================================================================== */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}

@@ -1,0 +1,19 @@
+@import 'modules/base.css';
+@import 'modules/hyperlinks.css';
+@import 'modules/fonts.css';
+
+:root {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 0.15em; 
+  text-decoration-thickness: .05em;
+}
+
+:root {font-family: 'Open Sans', system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+
+/* :root {
+  font-size: calc(1rem + 0.25vw);
+} */
