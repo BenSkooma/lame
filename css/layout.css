@@ -1,17 +1,20 @@
 .site-topbar {
   /* background-color: silver; */
-  border-bottom: 1px solid hsl(0, 0%, 90%);
-  background-color: white;
+  /* border-bottom: 1px solid hsl(0, 0%, 90%); */
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: inset 0 -1px 0 hsl(0, 0%, 90%);
+}
+
+.site-topbar__inner > * {
+  box-shadow: inset 0 -1px 0 hsl(0, 0%, 90%);
 }
 
 .site-topbar {
   display: flex;
   justify-content: center;
+  position: fixed;
   width: 100%;
   width: 100vw;
-  position: fixed;
-  z-index: 100;
-  box-shadow: 1px 3px 3px rgba(0,0,0,0.2)
 }
 
 .site-topbar__inner {
@@ -44,12 +47,15 @@
 }
 
 .site-topbar__logo img {
-  min-width: 10rem;
+  min-width: 9rem;
+  max-width: 9rem;
   padding-block: 1rem;
 }
 
 
-
+@media screen {
+  
+}
 
 
 
@@ -64,7 +70,6 @@
 
 .site-mm > li {
   display: flex;
-  align-items: stretch;
 }
 
 .site-mm > li > a {
@@ -73,32 +78,43 @@
   padding-inline: 1rem;
 }
 
-.site-mm > li > a > span {
+/* .site-mm > li > a > span {
   background-color:blueviolet;
-}
+} */
 
 .site-mm > li > a:hover {
-  background-color: hsl(0, 0%, 90%);;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: inset 0 -1px 0 hsl(0, 0%, 90%);
+  /* box-shadow: inset 1px 0 0 hsl(0, 0%, 90%), inset -1px 0 0 hsl(0, 0%, 90%), inset 0 -1px 0 hsl(0, 0%, 90%); */
 }
+
+/* .site-mm-parent {
+  position: relative;
+} */
 
 .site-mm-sub {
   position: absolute;
+  overflow: hidden;
   z-index: 10;
-  top: calc(100% + 1px);
+  top: 100%;
   left: 0;
   right: 0;
   display: flex;
   width: 100%;
   width: 100vw;
-  background-color: white;
+  background-color: hsl(0, 0%, 98%);
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  /* transition: 150ms opacity ease-in-out, transform 150ms ease-in-out; */
-  box-shadow: 1px 3px 3px rgba(0,0,0,0.2)
 }
 
 .site-mm-sub > div {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  max-inline-size: 121ch;
+  margin-left: auto;
+  margin-right: auto;
   transform: translateY(-10px);
   opacity: 0;
   transition: 250ms opacity ease-in-out, transform 250ms ease-in-out;
@@ -109,26 +125,30 @@
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  z-index: 10;
+  z-index: 100;
 }
 
 .site-mm-parent::after {
+  display: block;
   position: absolute;
-  z-index: -10;
-  top: calc(100% + 1px);
+  z-index: 10;
+  top: 100%;
+  bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
+  width: 100vw;
+  height: 100%;
   height: 100vh;
   background-color: hsl(229, 19%, 39%);
   opacity: 0;
   pointer-events: none;
-  content: 'overlay';
+  content: ' ';
   transition: 250ms opacity ease-in-out;
 }
 
 .site-mm-parent.--open::after {
-  opacity: 0.5;
+  opacity: 0.666;
 }
 
 .site-mm-parent.--open > .site-mm-sub > div {
