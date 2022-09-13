@@ -165,10 +165,17 @@
 .site-cover {
   display: flex;
   justify-content: center;
-  background-color: hsl(267, 22%, 35%);
-  height: 400px;
+  background-color: #4f3e6f;
+  height: 350px;
   position: relative;
   z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1840px) {
+  .site-cover {
+    height: 400px;
+  }
 }
 
 .site-cover-content {
@@ -176,12 +183,13 @@
   background-image: url(../img/hero-bg-templax.png);
   background-repeat: repeat-x;
   background-position: left bottom;
+  background-size: cover;
   height: 100%;
   width: 100%;
-  max-width: 160ch;
+  max-width: 180ch;
   z-index: 2;
 }
-.site-cover::before {
+/* .site-cover::before {
   content: 'before';
   display: block;
   background-image: url(../img/hero-bg-templax-before.png);
@@ -192,6 +200,7 @@
   position: absolute;
   z-index: 1;
   left: 0;
+  outline: 1px solid orange;
 }
 .site-cover::after {
   content: 'after';
@@ -204,6 +213,27 @@
   position: absolute;
   z-index: 1;
   right: 0;
+} */
+
+.site-cover-content::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(79,62,111,1) 0%, rgba(255,255,255,0) 100%);
+  left: 0;
+  top: 0;
+}
+.site-cover-content::after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(79,62,111,1) 0%, rgba(255,255,255,0) 100%);
+  right: 0;
+  top: 0;
 }
 
 
