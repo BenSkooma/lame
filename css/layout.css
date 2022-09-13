@@ -200,7 +200,6 @@
   position: absolute;
   z-index: 1;
   left: 0;
-  outline: 1px solid orange;
 }
 .site-cover::after {
   content: 'after';
