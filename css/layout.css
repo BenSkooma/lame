@@ -169,16 +169,15 @@
   height: 350px;
   position: relative;
   z-index: 1;
-  transition: all 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 1840px) {
+@media screen and (min-width: 1440px) {
   .site-cover {
     height: 400px;
   }
 }
 
-.site-cover-content {
+.site-cover-inner {
   position: absolute;
   background-image: url(../img/hero-bg-templax.png);
   background-repeat: repeat-x;
@@ -186,8 +185,11 @@
   background-size: cover;
   height: 100%;
   width: 100%;
-  max-width: 180ch;
+  max-width: 160ch;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .site-cover::before {
   content: 'before';
@@ -214,7 +216,31 @@
   right: 0;
 }
 
-/* .site-cover-content::before {
+.site-cover-content {
+  padding-top: 80px;
+  padding-left: 250px;
+  text-align: right;
+  color: white;
+}
+
+.site-cover-content span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.363);
+}
+
+.site-cover-content a {
+  display: inline-block;
+  background-color: aliceblue;
+  padding: .5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 3rem;
+  color: black;
+}
+
+/* .site-cover-inner::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -224,7 +250,7 @@
   left: 0;
   top: 0;
 }
-.site-cover-content::after {
+.site-cover-inner::after {
   content: ' ';
   display: block;
   position: absolute;
