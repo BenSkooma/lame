@@ -189,7 +189,7 @@
   max-width: 180ch;
   z-index: 2;
 }
-/* .site-cover::before {
+.site-cover::before {
   content: 'before';
   display: block;
   background-image: url(../img/hero-bg-templax-before.png);
@@ -213,9 +213,9 @@
   position: absolute;
   z-index: 1;
   right: 0;
-} */
+}
 
-.site-cover-content::before {
+/* .site-cover-content::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -234,7 +234,7 @@
   background: linear-gradient(270deg, rgba(79,62,111,1) 0%, rgba(255,255,255,0) 100%);
   right: 0;
   top: 0;
-}
+} */
 
 
 
