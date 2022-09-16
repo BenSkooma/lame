@@ -136,10 +136,10 @@ Usage: codyhouse.co/license
   width: 40px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1%;
+  border-radius: 10%;
   bottom: -160px;
   -webkit-animation: square 25s infinite;
-  animation: square 25s infinite;
+  animation: square 40s infinite;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
 }
