@@ -1,6 +1,7 @@
 @import 'modules/base.css';
 /* @import 'modules/hyperlinks.css'; */
 @import 'modules/fonts.css';
+@import 'modules/site-cover.css';
 
 :root {
   line-height: 1.5;
