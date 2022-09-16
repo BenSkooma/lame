@@ -74,7 +74,7 @@ Usage: codyhouse.co/license
 
 @media (prefers-reduced-motion: no-preference) {
   .bg-gradient-2[data-bg-animate=on] {
-    background-size: 240% 400%;
+    background-size: 140% 400%;
     background-position: 0% 0%;
     -webkit-animation: bg-gradient-anim-2 40s linear infinite;
             animation: bg-gradient-anim-2 40s linear infinite;
@@ -118,7 +118,7 @@ Usage: codyhouse.co/license
 
 
 
-/* 
+
 
 
 .bg-bubbles {
@@ -231,4 +231,4 @@ Usage: codyhouse.co/license
     -webkit-transform: translateY(-700px) rotate(600deg);
             transform: translateY(-700px) rotate(600deg);
   }
-} */
+}
